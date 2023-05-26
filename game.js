@@ -85,9 +85,8 @@ class RockPaperScissorsGame {
     if (index1 === index2) {
       return "Draw";
     } else if (
-      (index1 === 0 && index2 === 1) ||
-      (index1 === 1 && index2 === 2) ||
-      (index1 === 2 && index2 === 0)
+      (index1 < index2 && index2 - index1 <= this.halfMoves) ||
+      (index1 > index2 && index1 - index2 > this.halfMoves)
     ) {
       return "Win";
     } else {
@@ -103,9 +102,8 @@ if (
   new Set(moves).size !== moves.length
 ) {
   console.log(
-    "Invalid arguments. Please provide an odd number of non-repeating moves."
+    "Invalid arguments. Please provide an odd number of non-repeating moves"
   );
-  console.log("Example: node game.js rock paper scissors");
 } else {
   const game = new RockPaperScissorsGame(moves);
   const computerMove = Math.floor(Math.random() * moves.length) + 1;
