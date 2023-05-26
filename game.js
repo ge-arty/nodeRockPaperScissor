@@ -133,3 +133,13 @@ if (
     console.log("HMAC key:", game.key.toString("hex"));
   });
 }
+
+// node game.js A B C D E F G
+// node game.js A B C
+
+// Table gen
+// node game.js A B C D E
+
+// Errors
+//  node game.js A A C
+//  node game.js A C
